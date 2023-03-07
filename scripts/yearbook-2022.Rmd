@@ -1,0 +1,578 @@
+---
+title: Cultural Mobility Yearbook 2023
+output:
+  pdf_document:
+    latex_engine: xelatex
+    includes:
+      in_header: preamble.tex
+  word_document: default
+mainfont: Peclet
+sansfont: Peclet
+font-family: Peclet
+---
+
+<!-- Define font commands -->
+
+\definecolor{divider}{HTML}{EBEBEB}
+\definecolor{highlight}{HTML}{FFFF66}
+\definecolor{header}{HTML}{4477AA}
+\arrayrulecolor{divider}
+\pagenumbering{gobble} 
+
+```{r, include = FALSE}
+otmh2 <- "\\fontsize{45bp}{45bp}\\selectfont\\color{header}"
+otmh3 <- "\\fontsize{25bp}{25bp}\\selectfont\\color{header}"
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/Documents/R/otm-yearbook-2022')
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, echo = FALSE, dev = "cairo_pdf")
+```
+
+
+\newpage
+\pagenumbering{arabic}
+
+```{r, include=FALSE}
+
+source("scripts/00_get-data.R")
+
+```
+
+\newpage
+
+## `r otmh2`Methodology
+
+This report explores trends in cultural mobility during 2022. It does this primarily through a quantitative and qualitative analysis of calls for participation in residencies, meetings, fellowships, training activities, and other funded mobility opportunities for artists and culture professionals that were published on the On the Move website between 1 January – 31 December 2022 (with a few comparative references to the same data from 2021). 
+
+In 2022, this gives us a dataset of 609 calls involving 87 countries and territories. While it is not a complete picture of all activity, it represents our best effort to monitor activity in the mobility field, helped by our international network of more than 50 member organisations. 
+
+The report also references other studies and reports produced by other actors in the field.
+
+### Scope and limitations
+
+Because the dataset comes from calls published on the On the Move website it has some specific characteristics:
+
+-	It reflects On the Move’s editorial policy and focus. This policy can be read in detail on our website, but we focus on funded programmes that cover at least some of the costs of travel (or that offer remuneration in the case of online/remote programmes). The calls that are posted to the website, and therefore analysed here, are generally one-off calls rather than those for ongoing, regularly funded programmes (which are separately listed in our mobility funding guides). 
+-	On the Move covers all art forms: Performing Arts (theatre, dance, opera, circus, street arts, etc.), Visual Arts & Design (painting, sculpture, photography, installation, independent film, etc.), Digital and New Media (electronic art, new media, web, etc.), Music & Sound, Literature (including translation), Cultural Heritage (tangible heritage, movable heritage, intangible heritage, archives), and Cross-disciplinary forms. We usually don't cover commercial film and other creative industries sectors outside the above categories. 
+-	We cover opportunities for all actors in the sector: artists, culture professionals and/or cultural organisations (from institutions to small collectives and associations), funders, policymakers, curators, and researchers.
+-	We strive to cover the field as fully as possible, but our network is more concentrated in Europe, and in the English and French languages, so we expect to have some blind spots. These gaps in terms of coverage also point to long-standing structural imbalances in the mobility field.
+-	Usually we know the principal organiser and the destination for a mobility activity (e.g. a residency centre in Poland), but we do not know who will ultimately become the beneficiary of a programme or opportunity (e.g. a visual artist from Albania). As such, when we look at ‘origin’ countries or regions this refers to the location of the call’s organising entities, and where we are able to map flows these are flows of organisational and logistical capacity rather than mobility flows of beneficiaries.
+-	The number of beneficiaries, and therefore the scale of programmes, is not captured. So one call might refer to an opportunity for a single professional to attend a conference, while another might refer to a large-scale programme awarding multiple grants to multiple beneficiaries.
+-	Some other caveats apply for specific classifications, but are noted in the text.
+
+While the above points are important to keep in mind, the data in this publication nonetheless aims to provide a close look at shifts in the mobility field to help identify promising areas for qualitative analysis and further research, as well as blank spots that need more support and attention from the field at large.
+
+### Geographical regions 
+
+For geographical analysis, this report uses the United Nations M49 geoscheme, which organises countries into regions (Africa, Asia, Americas, Europe and Oceania) as well as sub-regions (Central Asia, Eastern Asia, South-eastern Asia, etc.). The relevant countries are listed during the regional breakdowns in the overview section.
+
+
+## `r otmh2`Overview
+
+```{r, include=TRUE}
+source("scripts/01_opportunity-type-by-mobility-type.R")
+
+table %>%
+  kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+
+
+```{r, include=TRUE}
+source("scripts/02_mobility-type.R")
+
+```
+
+
+```{r, include=TRUE}
+source("scripts/03_target-scope-by-mobility-type.R")
+
+table %>%
+    kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+
+```{r, include=TRUE}
+source("scripts/04_target-by-mobility-type.R")
+
+table %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+
+Our last Yearbook covered mobility activity in 2021. In it, we wrote that Covid had had an ‘end to end effect on the mobility process – influencing planning, travel, artistic creation and presentation’, and that it had catalysed a large-scale shift to online formats. Analysing 609 calls for funded mobility opportunities from 2022, this new edition focuses on another global challenge for the cultural field: how we can adopt greener and more sustainable ways of living and working.
+
+If the pandemic was meant to be a ‘reset’ for the cultural field and society at large, then environment and sustainability has been at the heart of our conversation on how to restart on different terms. It is a broad topic that interlocks with a number of pressing concerns: social justice and access, community and co-creation, the urban-rural divide, economic models and fair pay. In 2020, the On the Move website featured 25 calls labelled as dealing thematically with the environment and sustainability (3.9% of all calls). In 2021, this figure was 47 (7.3%), and in 2022 it rose to 65 (10.7%).
+
+Among those 65 calls from 2022, we can see some hints of a different way of doing things. Projects were often cross-disciplinary and cross-sectoral. 61.5% of calls with defined worksites involved activities in rural areas. 27.7% involved working in response to a particular landscape or natural resource.
+
+What there is less evidence of is changes to mobility itself and to ways of travelling: few projects offered coverage for the additional costs of overland travel. The global nature of the environmental crisis is also not reflected in the recorded activity: 93.2% of all environment and sustainability calls had at least one organiser in Europe.
+
+We return for a closer look at this subject in the second part of this report, but first reflect on the overall shape of the cultural mobility field – starting with the state of digital mobility after the surge in online activity during the pandemic. 
+
+
+## Digital mobility
+
+```{r, include=TRUE}
+source("scripts/02a_mobility-type-year.R")
+
+table %>%
+    kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+In 2022, the Covid-19 pandemic continued, but had a smaller impact on international mobility as most countries dropped travel restrictions or bans. As the influence of Covid has waned, online activities have also reduced – almost halving from 2021 to 2022. In 2021, 29.4% of all calls involved online/remote or hybrid work. In 2022, this figure dropped to 15.5%. The main decline was in online or remote only work, however, which fell from 18.5% to 6.4%. Hybrid work, involving a mix of online and in-person activity, held up better, making up 9.1% of all calls in 2022 versus 10.9% in 2021.
+
+This pattern of increased in-person activity played out fairly consistently across Africa, Americas and Europe. As a region, Asia retained more online and hybrid activity, with the share of hybrid calls even increasing from 9% in 2021 to reach 14.5% in 2022.
+
+In general, however, there has been a clear pullback from online only formats, and where they are offered they are sometimes used more as an emergency backup. Examples from 2022 include the Culture Moves Europe programme, which allowed artists from Ukraine to apply for virtual mobility grants, if needed, and the Kone residency, which, after being one of the first to adopt a remote residency format in 2020, offered home residencies only to those with ‘reasonable grounds for it […] such as physical disability, family reasons (e.g. single parent), or [a] volatile political situation in the country of origin’.    
+
+Of the 37 calls for online or remote only work, 21 (56.8%) involved organisers from the UK, the USA, or Germany. Most of these were open to applicants from around the world, though a few targeted intercontinental cooperation. One of these was the ‘Digital Bridge’ call from CMMAS – the Mexican Centre for Music and Sonic Arts in partnership with UK organisation Sound and Music which sought to bring together two pairs of women and minority gender composers in the UK and Mexico to create new work for a digital premiere in March 2023. 
+
+Online formats can shine in cases like these, where travel distances make in-person mobility expensive. At the same time, some activities that seem well-suited to being online in terms of cost and convenience have seen a dramatic return to in-person work. In the case of Training calls, 41.3% were online or remote only in 2021; this figure fell to 5.9% in 2022.
+
+Hybrid formats have proven more popular. An optimistic take on this is that fewer organisers are forced into online work, and more are able to make deliberate choices. But it is worth asking who benefits from this flexibility. While some mixed format calls, and especially those for presenting work, did offer a choice of mobility (i.e. beneficiaries could undertake activities online or in person), most were for projects that combined an online phase and an in-person one – usually in that order, and with activities for each phase predetermined. Not many offered the equivalent of ‘flexible work’, where the beneficiary could decide what happened where.
+
+But in spite of these caveats it does seem that an equilibrium is being found. There are also signs that some forward-thinking organisers are changing attitudes to international production. One interesting example from 2022 came in the form of a call from Théâtre de Choisy-le-Roi. Under its support programme for linguistic diversity it offered a production grant and a five-day residency at a location of the applicant’s choice: ‘To find the most appropriate solution for the travel of the teams and related expenses, the residency may take place at the Théâtre de Choisy-le-Roi, or in any other outside professional structure, in France or abroad.’
+
+
+## `r otmh2`Art forms
+
+```{r, include=TRUE}
+source("scripts/05_artform-by-mobility-type.R")
+
+table %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+
+```{r, include=TRUE, fig.height=12, fig.width=8}
+source("scripts/06_opportunity-type-by-artform.R")
+grid.arrange(plot1, plot2, plot3, plot4, ncol=2)
+
+```
+
+```{r, include=TRUE, fig.height=12, fig.width=8}
+grid.arrange(plot5, plot6, plot7, ncol=2)
+
+```
+
+As in the previous year, the Cross-disciplinary category (indicating both calls open to any discipline and ones aimed at interdisciplinary approaches) was the largest at 38.2% of all calls. One consequence of this rise of hybrid forms has been more art activity moving beyond specialist venues – including into natural spaces (something we’ll come back to in the chapter on environment and sustainability). 
+
+The share of activity among specific art forms remained quite similar in 2022, with Visual Arts & Design accounting for 22.1%. This large category contained a diverse range of projects in 2022, including land art, outdoor installations, and large-scale pieces for urban developments. In September, for instance, The Gallery in the UK offered a commission for artworks to be displayed at billboards usually reserved for advertising in England, Northern Ireland, Scotland and Wales – one of many projects bringing visual arts to public space. 
+
+A few other trends emerge within Visual Arts & Design activity from 2022. The discipline’s close relationship with archiving and cultural heritage was reflected in several projects that sought to bring new perspectives to existing records, or fill in their gaps. Particularly, there were a number of calls inviting artists to work in tandem with museums and galleries in efforts to bring decolonial thinking to existing collections. These included the Staatliche Museen zu Berlin (National Museums in Berlin)’s call for visual artists to work around an exhibition, ‘Discovering the West’, that would revisit the histories of the Ottoman and Persian Empires, and a commission from Charlottenburg Palace for an art intervention responding to their statue of Elector Friedrich Wilhelm, the 17th century elector who granted a charter to the Brandenburg Africa Company. 
+
+Some other interesting developments for Visual Arts & Design from 2022 include the founding of Magnetic, a new network of visual arts residencies bringing together eight venues in the UK and France; the launch of the multidisciplinary Intermix Residency (‘Art & Fashion Reimagined’) by Saudi Arabia’s Visual Arts Commission and Fashion Commission; and the launch of a new two-year project from Culture for All in Finland (funded by Kone Foundation) organising residencies for disabled artists and artists who are Sign Language users. 
+
+15% of opportunities from our data in 2022 had a Performing Arts focus – 102 in total. The share of Performing Arts opportunities with the Presenting Work label rose from 17.7% in 2021 to 22.2% 2022 – perhaps as festivals and in-person events resumed following the pandemic. However, it was still not exactly business as usual in 2022, and the performing arts faces particular ongoing challenges in reforming towards greener touring practices. One interesting experiment in this from 2022 was the Creative Europe project Rail2Dance, led by Städtische Theater Chemnitz, which in June called for five artists to take part in a 40-day tour threading through cities in Finland, Sweden, Germany and Slovenia, with all travel undertaken by train or (for one trip) ferry. 
+
+For calls in the Performing Arts category, digital mobility is less pronounced – 90% of calls were for in-person activities. Only 2% were online or remote, while 8% took hybrid formats. However, there is still an evident interest in digital technologies and a search for longer term solutions that make sense for the discipline. Examples of this in 2022 include SIDance’s call for works to be shown on Stre@m – an Asian digital dance platform trying to crack the video-on-demand market for performances; and Goldsmiths - University of London’s call in February 2022 for a six-month virtual residency programme that would see artists don ‘Perception Neuron’ suits to work with Goldsmith’s own motion capture software. 
+
+Music & Sound, an art form for 10.6% of the calls in our data, likewise benefited from a return to in-person work. The Meetings & Collaboration category in particular rose from 16.2% in 2021 to 28.8% in 2022. In 2022, several projects and programmes focused on the issue of sustainable touring – notably Goethe-Institut’s Touring Green fund which aimed to ‘buck the trend of short-lived fast-paced music tours’, and the new EU programme MusicAIRE, which aims to contribute to a ‘green, digital, just, and resilient recovery of the music ecosystem’.  Within our data, European funding was particularly important to mobility in the Music & Sound sector, with 27.8% of calls supported by the EU, whether through cooperation projects, special calls, or networks like the European Music Exporters Exchange.
+
+As last year, Literature, Digital / New Media, Architecture, and Cultural Heritage all make up a relatively small share of opportunities in 2022. As one might expect, Digital / New Media had the highest proportion of online/remote and hybrid work in 2022 (18.8% and 15.6%), but Literature also had a high proportion of online activity, even increasing slightly versus 2021. Several residencies that operate within the UNESCO City of Literature network retained online formats they adopted during the pandemic, but there were some other digital projects, including a call from Art Center Nabi in South Korea for digital and literary research (under the theme ‘East Meets East’) ahead of an online showcase that took place in September. 
+
+While a relatively small number of calls fall within the Digital / New Media category, this is slightly deceptive as many other art forms work with technology, particularly in cross-disciplinary formats. Calls in this category were rather for artists specialising in augmented reality, XR, immersive technology, etc. These included calls from Nature Park Hoher Fläming in Germany, which in June 2022 sought artists to create site-specific AR artworks to be situated along a 7km trail between Klein Glien and Wiesenburg, and an invitation from Esch2022, European Capital of Culture to apply for support to prototype a new XR project through a residency and grant.
+
+
+
+## `r otmh2`Regions 
+
+```{r, include=TRUE}
+source("scripts/07_regional-flows.R")
+
+library(webshot)
+webshot("output/region-sankey.html" , "output/sankey1.pdf", delay = 0.2)
+
+matrix1 %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+
+The regional picture remains quite similar in 2022 as in the previous year, with the main change the reduction in online formats. This is seen most clearly in Europe, with the number of calls involving online space as a ‘destination’ dropping to 70 in 2022 from 122 in 2021. In general, interregional collaboration is again somewhat limited, and few calls had mobility destinations in multiple regions – only around 4%. As last year, Oceania has limited presence in our data, but we can take a closer look at the other regions.
+
+
+## `r otmh3`Africa
+
+```{r, include=TRUE}
+region_param <- "Africa"
+
+nrow(clean %>% filter(str_detect(destination_region, region_param) |
+                         str_detect(origin_region, region_param)))
+
+source("scripts/09_mobility-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/10_target-scope-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/12_opportunity-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/11_artform-regional.R")
+
+```
+
+```{r, include=TRUE}
+
+library(webshot)
+webshot("output/region-sankey2.html" , "output/sankey2.pdf", delay = 0.2)
+
+matrix2 %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+```{r, include=TRUE}
+source("scripts/13_destinations-map-africa.R")
+
+```
+
+In terms of mobility destinations, South Africa was the most prominent African country (5 calls), followed by Senegal (3) and Tunisia (3). While overall there were mobility opportunities for 14 countries, the majority of these countries only had one or two calls.
+
+In 2022, Africa was the region that had the highest share of calls falling within the Visual Arts & Design category – 27.8%. Programmes here included a Boot Camp for visual artists at the 32bis contemporary art space in Tunis (co-organised with the African Cultural Fund), and also the Résidences Jiser programme, which called for 9 visual artists resident in Spain, Tunisia and Algeria to join an extended multi-site residency with stays of two months each in Sousse, Algiers and Barcelona. 
+
+Institutional funders, universities and foundations remain important to mobility in and from Africa, with Goethe-Institut, Wits University, Kamel Lazaar Foundation, and Music in Africa Foundation all active in organising opportunities in 2022. In 2022, the African Union celebrated its 20th anniversary and organised two notable residency programmes – one for 5 visual artists in Loman Art House in Dakar, and one for 5 writers at the Library Of Africa and The African Diaspora (LOATAD) in Accra, Ghana.  However, there were also a number of actions organised by smaller companies for mobility within Africa. LAPA residency space in Brixton, Johannesburg organised the pair residency ‘Aporia: Poems for Critical Times’.  Also in South Africa, The Music Imbizo invited curators and promoters to attend its annual conference, and in Swaziland, House on Fire / MTN Bushfire Festival launched its CollaboNation Grants, funded by the Sound Connects Fund, supporting Southern African musicians to work together on recording new songs. 
+ 
+Interregional collaborations were mostly brokered by larger institutions, though an exception from 2022 was the project Down the Wire, organised by Cryptic in the UK and B’sarya’s in Egypt.  This project saw 8 artists from the UK take up an in-person residency in Glasgow, joined digitally by 8 Egyptian artists. Two were then selected for a longer term exchange in Glasgow and Alexandria. Among larger funders, Roberto Cimett
+a Fund reopened its mobility fund in 2022 and directed it specifically to women artists travelling between North Africa and the Middle East. 
+
+Alongside activities in Africa, there were also a number of projects in other regions that invited applications from African artists and professionals –including from Thami Mnyele Foundation in the Netherlands, Gasworks and the Delfina Foundation in the UK, and Air 351 in Portugal. 
+
+
+## `r otmh3`Americas
+
+```{r, include=TRUE}
+region_param <- "Americas"
+
+nrow(clean %>% filter(str_detect(destination_region, region_param) |
+                         str_detect(origin_region, region_param)))
+
+source("scripts/09_mobility-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/10_target-scope-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/12_opportunity-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/11_artform-regional.R")
+
+```
+
+```{r, include=TRUE}
+
+library(webshot)
+webshot("output/region-sankey4.html" , "output/sankey4.pdf", delay = 0.2)
+
+matrix4 %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+```{r, include=TRUE}
+source("scripts/14_destinations-map-americas.R")
+
+```
+
+In our 2022 data, the United States of America was the biggest destination for the Americas region (18 calls), followed by Canada (5). In Latin America and the Caribbean there were just a handful of calls for Brazil, Mexico, Chile, and Puerto Rico. 
+
+Compared to the previous year, there was more cross-disciplinary work in the Americas region. Within our 2022 data, California in particular emerges as a hotspot for cross-disciplinary work with a focus on tech. In April, the organisation C/Change called for interdisciplinary teams to propose prototypes for projects utilising emerging technologies to enable cultural exchange, with work taking place either online or at the Gray Area Incubator Space in San Francisco over a period of six months.  In November, the project Antikythera, organised by the Berggruen Institute in Los Angeles, called for applicants for a five-month speculative design-research studio focused on the concept of ‘planetary scale computation’.  In July, Thoughtworks Arts organised a residency at Mars.college, an educational programme, R&D Lab, and ‘off-grid residential community’ in the desert area of Bombay Beach, California, with a choice of two themes: ‘Speculative Futures - Do It There, Take It Back To The Neighborhood’ or ‘Alternative AI Creative Infrastructures - The Sky’s The Limit’. 
+
+Similarly, there were also a number of projects organised around laboratory research, scientific institutions, and bioarts – usually in a residency format. So the biotech company Ginkgo again ran its residency programme for artists exploring synthetic biology, the Coalesce Center for Biological Arts at University at Buffalo offered a residency in its labs, and composers were invited to apply for a residency at Fermilab – America’s national laboratory dedicated to particle physics research.  
+
+Whereas in 2021, the Americas had no outflows and no subregional flows – meaning calls with organisers in Northern America either organised mobility to Northern America or engaged in digital mobility, and the same was true for Latin America and the Caribbean – in 2022, there was more interregional mobility. Opportunities in this line included ‘ARTEscénicas + digitalidad’, a collaboration involving several Goethe-Institut centres in South America, Espacio Checoslovaquia and the creation and residency centre NAVE in Chile, and the Instituto Nacional de Artes Escénicas in Uruguay that called for interdisciplinary groups to research the application of new technologies to stage performance, with in-person and online mentoring and residencies at spaces in Chile and Germany.  Another notable example was the new City as Forest residency programme, organised in its first edition by the Goethe-Institut and the Museum of Tomorrow in Rio de Janeiro, Swissnex in Brazil, and Pro Helvetia South America.  This project offered a residency at the Museum of Tomorrow’s Laboratory of Activities to speculate on the future of urban dynamics through ‘a multidisciplinary dialogue between art, biology, botany, microbiology, ecological studies, physics and life sciences’.
+
+
+
+## `r otmh3`Asia
+
+```{r, include=TRUE}
+region_param <- "Asia"
+
+nrow(clean %>% filter(str_detect(destination_region, region_param) |
+                         str_detect(origin_region, region_param)))
+
+source("scripts/09_mobility-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/10_target-scope-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/12_opportunity-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/11_artform-regional.R")
+
+```
+
+
+```{r, include=TRUE}
+
+library(webshot)
+webshot("output/region-sankey3.html" , "output/sankey3.pdf", delay = 0.2)
+
+matrix3 %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+```{r, include=TRUE}
+source("scripts/15_destinations-map-asia.R")
+
+```
+
+The Asian region covers a number of divergent situations in terms of cultural mobility. In the northern parts of Western Asia, mobility is primarily characterised by connection with EU programmes, which in 2022 accounted for a quarter of all calls with destinations in Western Asia. For the Middle Eastern countries such as United Arab Emirates, Palestine and Saudi Arabia, government programmes and large institutions like Sharjah Art Foundation in UAE are more prominent. Southern Asia is largely a blank spot in our data, with only India having activity in 2022. Finally, in South-eastern and Eastern Asia, Japan, South Korea and Singapore continue to be very active, with these three countries destinations for 44.4% of all calls with mobility to Asia.
+
+In 2021, online mobility was very pronounced in Asia – with 44.6% of all calls that had a defined mobility format and involved an organiser in the region taking an online/remote or hybrid format. Many of these opportunities originated in Japan, Taiwan or South Korea. In 2022, we saw some pullback from online formats – including from organisers like Sapporo Tenjinyama Art Studio and Paradise Air, both in Japan, who returned to in-person formats after experimenting with online work during the pandemic.  However, the reduction in digital mobility was less pronounced than in other regions, and the amount of hybrid mobility actually increased – rising from 9% in 2021 to 14.5% in 2022. A greater diversity of countries also engaged in online and mixed formats. We still find examples of hybrid formats in South Korea and Japan, but also in Cambodia, Jordan, India, and Saudi Arabia. One interesting example was the Artists Connecting in Transition project (organised by D6 in the UK, Arthereistanbul in Turkey, MedeArts in Jordan, and the Fanak Fund), which sought artists with lived experience of forced migration, exile or displacement for a programme of six artist residencies in UK, Turkey and Jordan, a series of international workshops, and a digital launch of artworks and local exhibitions. 
+
+Even if less pronounced than in other regions, there was still a return to in-person mobility in Asia as pandemic restrictions eased and events like the i Light festival in Singapore resumed operations after a two-year pause.  Capturing this shift in conditions, in June the Asia Culture Center chose the theme of its 2022 residency as ‘the post-COVID-19 era and post-humanism’. 
+
+Intraregional cooperation in Asia was a small but definite theme within opportunities from 2022. Projects in this line included Mekong Cultural Hub’s online networking and exchange programme for arts professionals in the Mekong region and Taiwan, as well as a new programme, the South-South Arts Fellowship, organised by Living Arts International and aimed at cultural workers in the Global South as ‘[the organisers] are acutely aware of the limited support available for South-South connectivity in arts, culture and heritage’.
+
+
+
+## `r otmh3`Europe
+
+```{r, include=TRUE}
+region_param <- "Europe"
+
+nrow(clean %>% filter(str_detect(destination_region, region_param) |
+                         str_detect(origin_region, region_param)))
+
+source("scripts/09_mobility-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/10_target-scope-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/12_opportunity-type-regional.R")
+
+```
+
+```{r, include=TRUE}
+source("scripts/11_artform-regional.R")
+
+```
+
+
+```{r, include=TRUE}
+
+library(webshot)
+webshot("output/region-sankey5.html" , "output/sankey5.pdf", delay = 0.2)
+
+matrix5 %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+```{r, include=TRUE}
+source("scripts/16_destinations-map-europe.R")
+
+```
+If Europe emerged from the pandemic in 2022, it was shaken again by armed conflicts and economic crisis, which through the year led to forced migration of artists and culture professionals from Ukraine, Afghanistan, the Middle East, and Africa. Although they are not always present in our data, a number of programmes were set up, at both institutional and independent levels, to support displaced artists and cultural professionals from these areas. 
+
+Europe remains the region most active in our data, reflecting higher levels of cultural subvention to support funded mobility. In 2022, 84.2% of all calls either had an organiser based in Europe or supported mobility to the region. 
+
+Looked at as a whole, the European mobility field is quite diverse in terms of organisers and mobility flows. In 2022, 37 countries were destinations for mobility activities. Large centres of activity do appear within this picture, with Germany, France, Italy, Spain and the UK acting as destinations for almost half of all calls for the region, but this is in line with their combined population size (a little less than half of the European population). We also see smaller countries such as Austria, Sweden and Finland with a large presence in our data due in part to greater levels of cultural subvention. 
+
+European mobility is also distinguished by a high level of interconnection between its sub-regions – Northern, Southern, Eastern and Western Europe – in terms of collaboration and the flow of organisational resources. A major factor in these internal flows is funding from the EU, and cooperation projects in particular play an important role in driving interregional cooperation. EU funding remained very important in 2022, but was slightly less present in our data versus 2021 – with 16.1% of calls with an organiser based in Europe receiving EU funding in 2022, against 19.7% in 2021. This seems mainly due to the switch to new funding cycles in the Creative Europe programme (and other European programmes such as Erasmus+) under the EU budget programme 2021-2027.
+
+Towards the end of the year, 2022 also saw the launch of the new Culture Moves Europe programme, funded by the European Commission and operated by the Goethe-Institut. Building on the success of the i-Portunus pilot initiative, this EU mobility scheme will award €21 million over three years and expects to issue grants to around 7,000 artists, creators, and culture professionals, making it an important source of ongoing funding for demand-led activities (where the applicant is able to propose where they want to go and what they want to do).
+
+As already noted, and as covered later in this publication, environmental and sustainability themed calls were particularly common in 2022, and 93.2% of all environment and sustainability calls with an organiser tied to a specific country had at least one organiser in Europe. Mobility opportunities related to science and technology also remain common in Europe, with 2022 examples including CERN’s arts programme organising a dual residency split between Switzerland and the International Centre for Theoretical Sciences (ICTS) in India, a number of projects organised under the S+T+ARTS programme, and several initiatives dealing with disinformation and developments in AI (including from The New Real, and the European project Escape Fake 2.0).  A final common focus for projects in 2022 was decolonisation – with fellowships, residencies and training programmes organised by Vrije Universiteit Amsterdam, the Artsformation project, NEMO – Network of European Museum Organisations, and Allianz Foundation, among others.
+
+Proportionally, Europe saw the largest drop in online/remote activities – falling from 14.2% of calls in 2021 to just 4.5% in 2022. Hybrid work held up better, marking a smaller reduction from 10.2% to 8.9%. Of European countries with more than 20 calls in both 2021 and 2022, only Austria increased its share of online/hybrid activity (from 8.6% to 13.2%). All others fell.
+
+Driven partly by EU programmes, as well as by national cultural institutes such as the Goethe-Institut, Pro Helvetia or Institut français, Europe in 2022 was again the region which did the most to organise mobility with destinations in other regions. 
+
+
+\newpage
+
+## `r otmh2`Environment & sustainability
+
+In 2022, the cultural mobility field emerged into the ‘post-pandemic’ era. As it did so, ambitions to reset or reform the cultural field met with reality, and one issue became pervasive in conversations of the future: environment and sustainability. The question of how to continue international cooperation in a sustainable way is a vast one that asks for the resolution of a complex knot of logistical challenges, financial pressures, emotional ties, and ethical responsibilities. Underlying the debates is a tension between the need to reduce activity, and the need to fight for greater visibility: carbon footprint vs cultural footprint. Fear of the consequences of inaction contend with anxiety about what is given up in a ‘green transition’, and there are real concerns about who makes the decisions, who benefits from a reordered world, and who might be left out.
+
+For readers of our last Yearbook, this set-up might sound familiar: it echoes many of the issues that lie behind the shift to digital formats. This similarity speaks both to breadth of the topic and the systemic nature of the challenge – to what Roberto Cimetta, in its manifesto statement on mobility, calls ‘the profound connection between cultural rights, cultural survival, climate justice and climate action’. 
+
+In the cultural field, the problem of how to realise fair forms of green mobility has been sharpened in recent years by both the pandemic and the European energy crisis. However, the challenge is not a new one, and the extensive history of ideas, debates and projects in this area is an indicator of how difficult some of the practical challenges are.
+
+To explore different approaches from within the field, in this chapter we look at the subset of calls from 2022 that had a thematic focus on environment and sustainability – whether that was in the form of site-responsive productions in natural landscapes, projects aiming to raise awareness of the climate crisis, or various activities linked to academic and scientific research. While the concept of sustainability might also encompass issues of work-life balance, mental health, and professional sustainability, in our data the focus is overwhelmingly on environmental sustainability and the climate crisis.
+
+It is a topic that has been growing rapidly. In 2020, there were 25 calls that focused on environment and sustainability (3.9% of listed calls). In 2021, there were 47 (7.3% of calls), and in 2022 this number rose to 65 (10.7% of calls). However, this activity was not distributed evenly.
+
+
+### `r otmh3`Regions 
+
+Regionally, calls themed around the environment and sustainability came mainly from Europe. In 2022, 93.2% of environment and sustainability themed calls with organisers tied to specific countries had at least one organiser based in Europe. 6.8% had at least one in Asia. For both Africa and Americas the figure was 3.4%. The regional split is similar for mobility destinations, but with around 1 in 10 calls involving online activity.
+
+The top 10 origin countries for environment and sustainability themed calls were all in Europe: Germany, France, Sweden, UK, Denmark, Spain, Belgium, Czech Republic, Finland, Latvia, Iceland, Italy, Switzerland. This is similar to the breakdown for overall mobility activity (with Germany and France leading), but with stronger representation for some Nordic-Baltic countries – notably Sweden, Denmark, Finland, Latvia and Iceland. 41.4% of environment and sustainability themed calls involved an organiser in Northern Europe. More than a quarter involved an organiser from a Nordic-Baltic country – and sometimes several through regional projects like the State of the Art Network, which launched in 2020 as a project to ‘discuss the role, responsibility, and potential of art and culture in the Anthropocene’.  Funding for such activities often comes from regional agencies like the Nordic Culture Fund. In total, around 1 in 6 calls with Nordic-Baltic organisers in 2022 had an environment and sustainability theme.
+
+While some Northern European states are indeed more exposed to climate impacts in a European context, from a global view the organisation of mobility projects is not led by those who are now seeing – and will in the future see – the largest environmental impacts. There were only a handful of projects from other regions in 2022, though several sought to act as catalysts for greater action. In September, for example, the first edition of a Climate Story Lab for artists from Southern African countries was held in Cape Town, seeking to trigger a larger wave of activity by providing a platform for ‘developing stories, designing impact strategies, and introducing projects to potential partners’. 
+
+One way to view this imbalance is to recognise that the world regions most affected by climate change are generally not the largest carbon emitters – nor those with the most resources to address the problem. Recalibrating the Compass: Culture’s Role in Addressing the Climate Crisis, a report from a June 2022 roundtable organised by ASEF, draws connections between the climate crisis and colonialism: ‘Several participants explained how, across Asia, colonialism has historically intermingled with the conquest and destruction of landscapes.’  In Halaqat: Lessons for the Future, the final publication of a two-year project exploring contemporary issues through the relation of Europe and the Arab world, ‘sustainability’ is understood much more in terms of economic and career longevity. In a section listing lessons for the future in relation to mobility, collected from three expert roundtables with 27 experts from the Arab world and Europe, the very first lesson reads: ‘Stress the importance of physical mobility. While participants recognise the devastating effects of air travels on the environment, they are concerned that their carbon footprint will be used as an excuse to put more hindrances on their already challenged international mobility.’  
+
+### `r otmh3`Digital mobility
+
+Digital mobility may seem like an important piece of the green puzzle, but it’s worth noting that online activity has its own footprint. In a report on a session on ‘digital sustainability’ at the Where to Land event in Strasbourg, Robert Gabriel sounds a note of caution: ‘Digitalisation and sustainability, as two mega-trends of the 21st century, unfortunately are rarely thought of together. Their relationship is ambivalent: current public policies, the digital transition and the dematerialisation that is associated with it, are often presented as one of the levers of the climate transition. The material reality of digital technology is quite different from the utopian hopes: A report published in December 2021 indicates that current digital uses in Europe represent 40% of a European’s total sustainable GHG budget by 2050 – and the trend is strongly increasing. The rapid renewal of equipment is still the biggest contributor to emissions, while the impact of data consumption, network usage and online storage is growing exponentially.’ 
+
+However, there is also little evidence, at least in our data, that digital formats appeal to projects focused on green issues, outside of a few isolated examples. 87.9% of environment and sustainability themed calls were for in-person activities, 6.9% mixed, and 5.2% online/remote. When digital mobility was used it also seldom seemed motivated by ecological concerns so much as by convenience, cost or flexibility. 
+
+
+### `r otmh3`Art forms
+
+```{r, include=TRUE}
+source("scripts/17_environment-artforms.R")
+
+table %>%
+   kbl(longtable = TRUE,
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"),
+                font_size = 8) %>%
+    row_spec(1:(nrow(table) - 1), hline_after = T)
+
+```
+
+
+In terms of art forms, environment and sustainability themed calls were much more likely to be open across disciplines or to interdisciplinary approaches: 58.1% of calls were cross-disciplinary, versus a global share of 38.2%. This general openness, along with the broad meta quality of the topic itself, means that an interest in environment and sustainability manifests in a number of different project formats, steered by a diverse range of organisers.
+
+
+### Sustainable formats 
+
+A more sustainable form of mobility should demand different places, modes and rhythms of work. In this section we take a closer look at how environment and sustainability themed calls were organised, structured and presented.
+
+
+```{r, include=TRUE}
+source("scripts/18_environmental-affordances.R")
+
+```
+
+### `r otmh3`Rural sites
+
+Environment and sustainability themed calls often prefer activity in rural sites, and in doing so deemphasise cities as centres of cultural production.
+
+Among the 52 calls that involved a defined worksite, 20 involved urban sites (38.5%), 27 rural sites (51.9%), and 5 both (9.6%). Peripheral territories and island sites also show up frequently in our data, with 2022 examples including the Faroe Islands, Fogo Island (Canada), Bornholm (Denmark), Björkö (Sweden), and Suomenlinna (Finland), as well as a number of coastal regions and peninsulas.
+
+27.7% of calls also involved working in response to a particular landscape or natural resource. Examples from 2022 include La Forêt Monumentale, a large-scale project that invited artists to propose eco-friendly installation artworks for construction along a 4km trail in the Roumare Forest near Rouen, and the German festival Vogelklang, which in November sought artists to create works that would respond to local birdsong and wildlife in the surrounding Black Forest. 
+
+Working in rural sites, projects inevitably engage with issues of environmental protection and regeneration, biodiversity, and resource management. One common site for projects is stressed landscapes, where the artist or cultural practitioner often takes on a kind of activist role. One example from 2022 was the OASIS 2027 residency programme, which in March called for artists to become ‘agents of change’, working in desert sites in Spain, Poland and Germany ahead of a ‘Festival of Future Deserts’ in Magdeburg that hoped to raise awareness of desertification and explore adaptive strategies.  Another example, integrated within a municipal strategy, was Doncaster Creates’ call in January for artists to explore the theme ‘Water as Life’ in a residency tied to the region’s efforts to redefine its use of surrounding peatland within a carbon neutral culture and economy. 
+
+In such projects, landscapes are not only sites for work, or sources of creative inspiration, but partners that lead and shape a process – or limit it. In their December call for a residency on Pico Island in the Azores, organisers FREESAM warned that given the ‘challenging and frequently changing conditions’, improvisation and the ability to adapt would be ‘necessary prerequisites for successful completion of a stay’.  This willingness to accept different, and at times less convenient, conditions can be seen as a step towards disrupting and redefining normal rhythms of work. As the Climate Heritage Manifesto, drafted for COP27 by the Climate Heritage Network, puts it: ‘Traditional knowledge and heritage buildings and landscapes that pre-date (or work independently of) the fossil fuel era point the way to post-carbon living.’ 
+
+
+### `r otmh3`Going slow
+
+To reduce carbon emissions the cultural sector needs to go beyond inspiration and good intentions to change deep-seated behaviours. 
+
+In the mobility field, ‘slow travel’ (meaning travel that takes place by land and sea, rather than by plane) is often talked about as an important strategy. However, very few calls in our data supported or encouraged slow travel. Among the 65 calls with a thematic focus on the environment and sustainability, only 2 restricted travel to land/sea. 1 other offered additional support for slow travel but made it optional, and 1 recommended slow travel but without providing additional support. One of the projects that adopted slow travel and made a full accounting of the costs was the Making Tracks exchange programme, which in June sought environmentally engaged music artists for a residency at Cove Park in Scotland, followed by a small concert tour. Applicants from mainland Europe were asked to travel by train, with the fare covered, and were paid a stipend (£100 per day) for every day they spent en route. 
+
+Mobility opportunities frequently allow beneficiaries to organise their own travel, but they may have to cover additional costs themselves. Of the 65 environment and sustainability themed calls in our data, 11 had limited travel grants (with an average grant of around 500 EUR, or a median grant of 390 EUR), and 22 covered all travel costs (though often in the form of a return flight ticket). The remainder, around half, granted an overall production budget or stipend which had to cover travel expenses. In these cases spending more on travel means less for pay or other production costs – and shifts responsibility (or choice) onto the beneficiary. In the second edition of the GALA – Green Art Lab Alliance Funding and Resources Guide, published in 2020, the researchers noted an increasing number of organisations and cultural funding bodies including sustainability criteria in their terms of support, or otherwise encouraging green behaviour – but also pointed out that few made extra resources available to support these changes in the long term. 
+
+For now then, slow travel remains a fringe practice – and perhaps a radical one. Indeed, looking back over examples of projects which have supported slow travel in the past, most were located in rural, and sometimes extremely isolated, areas outside of major cities with well-connected transport infrastructures.
+
+Beyond travel, another way to slow mobility down is to draw projects and stays out onto longer time scales. In this line we find a handful of very long-dated opportunities, like the November call for WaterLANDS, a Horizon 2020 project that sought applicants for residencies at six wetlands restoration sites in six countries over a four-year timeframe.  A number of other calls emphasised a slower pace of work within the call text itself, such as Verpėjos’ rural residency in Lithuania, ‘designed to focus on the slow process of artistic research’ without pressure of production.
+
+
+### `r otmh3`Collaboration / partnerships
+
+Environment and sustainability themed calls were often cross-sectoral, involving partnerships with other fields, or sometimes emerging independently from them. 12.3% of the environment and sustainability themed calls from 2022 involved collaboration with scientists/researchers, 10.8% collaboration with local communities, and 3.1% collaboration with business/industry. A little over 1 in 10 calls were organised by a university or research institute.
+
+Among the examples were initiatives like the project Mistra Environmental Communication, a four-year research programme shared by a large consortium of partners from academia, the public sector, business, the charitable sector, and the media which seeks to reframe environmental communication – including through artistic perspectives.  In 2022, the project organised three separate residencies with partner institutions in Czech Republic, Sweden, and Australia. Another notable example of cross-sectoral partnership was the Conscious Textile Research Fellowship, organised by MOME – the Moholy-Nagy University of Art and Design in partnership with the fashion brand Nanushka as part of the Conscious Textile Group – ‘a material R&D hub designed to explore innovative ways to use post-production textiles in a circular manner’. 
+
+Another angle of partnership has been collaboration with communities – whether to tap into local knowledge, explore forms of co-creation, or address the emotional impacts of climate change. One project in this line was the ALTER residency in Chandolin, a village perched at an altitude of 2000 metres in the Swiss Alps, which in November invited interdisciplinary teams for a three-month residency working in the local environment and with local villagers, to explore the concept of ‘transhumance’ (‘the annual migration of entire villages from the highest pastures in the spring to the valley below in the autumn’).  In November, Leeds 2023 launched ‘For the Public Good’, a call for an online/remote programme which would see artists working both with their local community and with an academic researcher from Leeds to explore how technology can be used to help communities understand climate change issues. 
+
+Overall there is a recognition that a changed environment means a changed community and different ways of living – and that when an environment is lost, one also loses heritage and history. Food production provides an accessible entry to these ideas, and emerges in our data as a regular topic of research. In 2022, Fogo Island Arts invited artists to explore the island’s foodways, working with a local chef; KiöR - Institute for Art in Public Space Styria organised the ‘Open Fields – Art and Agriculture’ residency, arranging a 2-4 week stay with a farmer ahead of creating work; and in South Korea, Song of the Wind organised a residency on marine ecosystems which saw participants split time between artistic work/creation and (paid) work seaweed farming. 
+
+One might ask why such projects need to be international. The answer must lie in the international scope of the climate challenge, and the need for large-scale coordination from individual to institutional levels – what Roberto Cimetta Fund calls a ‘local and international civic conscience’. 
+
+
+### `r otmh3`Shifting institutions
+
+Moving climate awareness from the individual to the institutional level is a key step in effecting a green transition. 16.9% of environment and sustainability themed calls in our data were organised directly by funders, reflecting desire to shift institutional priorities and a will to effect top-down change. In 2022, there were a number of large initiatives such as the New European Bauhaus (and festival), Goethe-Institut’s Touring Green programme, the new MusicAIRE fund focused on a ‘green, digital and just Recovery’ for the music sector, and Allianz Foundation’s new Climate Cultures strand. 
+
+In some cases, funding programmes in 2022 also reflected a larger underlying pivot in an institution’s fundamental mission or aims. An example of this was Fondation Thalie, which in 2022 aimed its 2023 research residency for the first time at artists with an ‘ecological dimension in their practice’, and at the same time adopted four overarching commitments for the foundation’s mission, including one to ‘[encourage] dialogue between artists and scientists concerning the climate emergency’.  Such pledges are significant milestones, but seldom come out of blue. In the case of Fondation Thalie, their commitment built on previous activity that included a series of hosted conversations with creators, artists and scientists around the climate emergency that began in 2020. 
+
+As elsewhere, a crucial question is how to crystallise commitments into actions, and, for funders, how to share responsibility rather than handing it down the chain to individuals. One organisation that has long been thinking through the consequences of their work as an international arts centre is Kone Foundation in Finland, which in a 2019 evaluation of its environmental impact found that work travel accounted for 62% of grantees’ emissions, with domestic flights alone making up 28% of the Foundation’s total carbon footprint.  They have since made a number of steps towards a more sustainable profile, including by shifting to an ‘ecologically sustainable residency programme’ that centres on environmental consciousness and commits to funding slow travel (for those that choose it), and by purchasing and donating forest to compensate for natural resource consumption. 
+
+
+### `r otmh3`Enduring change
+
+What to make of the recent surge of interest in ‘environment and sustainability’? From one perspective, there is a risk that thematic interest conceals a shallow level of engagement with the underlying practical problems. Identifying and adopting themes is itself somewhat cyclical, and a part of how funders, venues, festivals and producers refresh annual programmes, draw new interest from audiences, narrow the scope of their curation, and of course respond to what the world is talking about. After all, we also do it with this Yearbook. Reviewing previous reports on environment and sustainability also provokes a sense of déjà vu, as the same arguing points and targets recur, pinned to a stream of landmark international summits – Rio de Janeiro in 1992, Copenhagen in 2009, Paris in 2016, and so on.
+
+Looking broadly at the examples drawn together for this report, they prefer to turn outwards to the state of the world rather than inwards to the structural problems of an international sector which still, at the end of the day, involves a lot of coming and going if artists are to make ends meet. There is also perhaps a preference for imagining possible futures above adapting to present realities.
+
+But in spite of all this, there are signs of a deeper and more holistic shift: bottom-up pressure and grassroots leadership from individuals and independent organisations making radical changes to working practices; top-down decisions from large central funders to enforce or support certain conditions; a greater awareness of the interconnectedness of the sustainability topic and the issues of social justice it embeds.  It is also true that the reality of the crisis itself is accelerating and unlikely to fade into the background – for culture or for anyone else.
+
+A ‘green transition’ then will be measured not only in the visibility of the topic of sustainability, but also in actual changes to what motivates our mobility, how programmes operate, and where money is spent, as well as by an increasingly deep awareness of our mutual dependency. In a keynote at the Where to Land event in Strasbourg, Iphigenia Taxopoulou, general secretary of the network mitos21, called for just such an approach: ‘We tend to stress the exceptional character of our work in theatre and the performing arts. When it comes to the ecological transition, it is perhaps more constructive to focus, not so much on what makes our sector exceptional, but on everything that connects us to all other sectors, in a systemic manner: energy, buildings, questions of transportation and mobility – these are issues that we are unable to solve outside of the wider political plans for the sustainable transition and the goal for climate neutrality.’ 
